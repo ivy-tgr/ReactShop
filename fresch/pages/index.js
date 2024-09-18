@@ -6,6 +6,7 @@ import { DeleteProductsDialog } from '../components/DeleteProductsDialog';
 import { getProducts } from '../services/ProductService';
 import { createId } from '../utils/utils';
 import { Toast } from 'primereact/toast';
+import Navbar from '../components/Navbar';
 
 export default function Home() {
     let emptyProduct = {
@@ -126,6 +127,8 @@ export default function Home() {
         <div className="grid">
             <Toast ref={toast} />
             <div className="col-12">
+                <Navbar/>
+
                 <ProductTable
                     products={products}
                     selectedProducts={selectedProducts}
