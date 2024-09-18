@@ -3,7 +3,7 @@ import { ProductTable } from '../components/ProductTable';
 import { ProductDialog } from '../components/ProductDialog';
 import { ProductDeleteDialog } from '../components/ProductDeleteDialog';
 import { DeleteProductsDialog } from '../components/DeleteProductsDialog';
-import { getProducts } from '../services/ProductService';
+import { getProducts, createProduct, updateProduct, deleteProduct as deleteProductApi } from '../services/ProductService';
 import { createId } from '../utils/utils';
 import { Toast } from 'primereact/toast';
 import Navbar from '../components/Navbar';
@@ -32,7 +32,10 @@ export default function Home() {
     const toast = useRef(null);
 
     useEffect(() => {
-        getProducts().then(data => setProducts(data));
+        getProducts().then(setProducts).catch(error => {
+            console.error('Error fetching products:', error);
+            toast.current.show({ severity: 'error', summary: 'Error', detail: 'Failed to fetch products', life: 3000 });
+        });
     }, []);
 
     const openNew = () => {
@@ -46,26 +49,34 @@ export default function Home() {
         setProductDialog(false);
     };
 
-    const saveProduct = () => {
+    const saveProduct = async () => {
         setSubmitted(true);
 
         if (product.name.trim()) {
-            let _products = [...products];
-            let _product = { ...product };
-            if (product.id) {
-                const index = findIndexById(product.id);
-                _products[index] = _product;
-                toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000 });
-            } else {
-                _product.id = createId();
-                _product.image = 'product-placeholder.svg';
-                _products.push(_product);
-                toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Product Created', life: 3000 });
-            }
+            try {
+                let _products = [...products];
+                let _product = { ...product };
 
-            setProducts(_products);
-            setProductDialog(false);
-            setProduct(emptyProduct);
+                if (product.id) {
+                    await updateProduct(product.id, _product);
+                    const index = findIndexById(product.id);
+                    _products[index] = _product;
+                    toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000 });
+                } else {
+                    _product.id = createId();
+                    _product.image = 'product-placeholder.svg';
+                    await createProduct(_product);
+                    _products.push(_product);
+                    toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Product Created', life: 3000 });
+                }
+
+                setProducts(_products);
+                setProductDialog(false);
+                setProduct(emptyProduct);
+            } catch (error) {
+                console.error('Error saving product:', error);
+                toast.current.show({ severity: 'error', summary: 'Error', detail: 'Failed to save product', life: 3000 });
+            }
         }
     };
 
@@ -79,24 +90,36 @@ export default function Home() {
         setDeleteProductDialog(true);
     };
 
-    const deleteProduct = () => {
-        let _products = products.filter(val => val.id !== product.id);
-        setProducts(_products);
-        setDeleteProductDialog(false);
-        setProduct(emptyProduct);
-        toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
+    const deleteProduct = async () => {
+        try {
+            await deleteProductApi(product.id);
+            let _products = products.filter(val => val.id !== product.id);
+            setProducts(_products);
+            setDeleteProductDialog(false);
+            setProduct(emptyProduct);
+            toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
+        } catch (error) {
+            console.error('Error deleting product:', error);
+            toast.current.show({ severity: 'error', summary: 'Error', detail: 'Failed to delete product', life: 3000 });
+        }
     };
 
     const confirmDeleteSelected = () => {
         setDeleteProductsDialog(true);
     };
 
-    const deleteSelectedProducts = () => {
-        let _products = products.filter(val => !selectedProducts.includes(val));
-        setProducts(_products);
-        setDeleteProductsDialog(false);
-        setSelectedProducts(null);
-        toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Selected Products Deleted', life: 3000 });
+    const deleteSelectedProducts = async () => {
+        try {
+            await Promise.all(selectedProducts.map(product => deleteProductApi(product.id)));
+            let _products = products.filter(val => !selectedProducts.includes(val));
+            setProducts(_products);
+            setDeleteProductsDialog(false);
+            setSelectedProducts(null);
+            toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Selected Products Deleted', life: 3000 });
+        } catch (error) {
+            console.error('Error deleting selected products:', error);
+            toast.current.show({ severity: 'error', summary: 'Error', detail: 'Failed to delete selected products', life: 3000 });
+        }
     };
 
     const findIndexById = (id) => {
