@@ -2,6 +2,7 @@ import React from 'react';
 import { Menubar } from 'primereact/menubar';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
+import Image from 'next/image';
 
 export default function Navbar() {
     const items = [
@@ -52,7 +53,7 @@ export default function Navbar() {
         }
     ];
 
-    const start = <img alt="logo" src={`/demo/images/startPage/fresch.png`} height="80" className="mr-2"></img>;
+    const start = <Image widht="100" alt="logo" src={`/demo/images/startPage/fresch.png`} height="80" className="mr-2"></Image>;
 
     return (
         <div className="card">
