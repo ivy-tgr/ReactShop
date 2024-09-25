@@ -53,7 +53,7 @@ export default function Navbar() {
         }
     ];
 
-    const start = <Image widht="100" alt="logo" src={`/demo/images/startPage/fresch.png`} height="80" className="mr-2"></Image>;
+    const start = <Image width="150" height="80" alt="logo" src={`/demo/images/startPage/fresch.png`} className="mr-2"></Image>;
 
     return (
         <div className="card">

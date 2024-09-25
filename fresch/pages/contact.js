@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Navbar from '../components/Navbar';
 
 // Helper function to fetch products
 async function fetchProducts() {
@@ -117,6 +118,7 @@ export default function Products() {
 
   return (
     <div>
+      <Navbar/>
       <h1>Products</h1>
 
       <form onSubmit={editProduct ? handleUpdate : handleCreate}>
