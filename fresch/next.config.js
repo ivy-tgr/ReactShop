@@ -2,7 +2,7 @@ module.exports = {
     async headers() {
       return [
         {
-          source: "pages/api/products",
+          source: "/api/products",
           headers: [
             { key: "Access-Control-Allow-Credentials", value: "true" },
             { key: "Access-Control-Allow-Origin", value: "*" },
