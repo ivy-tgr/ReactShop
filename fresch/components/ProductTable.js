@@ -65,7 +65,6 @@ export const ProductTable = ({
                 currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
                 globalFilter={globalFilter} header={header} responsiveLayout="scroll">
                 <Column selectionMode="multiple" headerStyle={{ width: '3rem' }}></Column>
-                <Column field="code" header="Code" sortable style={{ minWidth: '12rem' }}></Column>
                 <Column field="name" header="Name" sortable style={{ minWidth: '16rem' }}></Column>
                 <Column field="image" header="Image" body={imageBodyTemplate}></Column>
                 <Column field="price" header="Price" body={priceBodyTemplate} sortable style={{ minWidth: '8rem' }}></Column>
