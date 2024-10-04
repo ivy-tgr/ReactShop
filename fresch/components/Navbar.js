@@ -19,7 +19,7 @@ export default function Navbar() {
             label: (
                 <Link href="/shop" className={styles.navLink}>
                     <div className={styles.linkContainer}>
-                        <i className="pi pi-star" /> Shop
+                        <i className="pi pi-shop" /> Shop
                     </div>
                 </Link>
             ),
@@ -47,6 +47,15 @@ export default function Navbar() {
                 <Link href="/contact" className={styles.navLink}>
                     <div className={styles.linkContainer}>
                         <i className="pi pi-envelope" /> Contact
+                    </div>
+                </Link>
+            ),
+        },
+        {
+            label: (
+                <Link href="/editShop" className={styles.navLink}>
+                    <div className={styles.linkContainer}>
+                        <i className="pi pi-pen-to-square" /> Edit Shop
                     </div>
                 </Link>
             ),
