@@ -38,7 +38,7 @@ export default function PaginationDemo() {
         return (
             <div className="col-12" key={product.id}>
                 <div className={classNames('flex flex-column xl:flex-row xl:align-items-start p-4 gap-4', { 'border-top-1 surface-border': index !== 0 })}>
-                    <Image className="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round" src={`https://primefaces.org/cdn/primereact/images/product/${product.image}`} alt={product.name} />
+                    <Image src={`/demo/images/product/${product.image}`} width="100" height="100" onError={(e) => e.target.src = 'https://www.mountainphotography.com/images/xl/20100923-Capitol-Sunset.jpg'} alt={product.image} />
                     <div className="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
                         <div className="flex flex-column align-items-center sm:align-items-start gap-3">
                             <div className="text-2xl font-bold text-900">{product.name}</div>
