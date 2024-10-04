@@ -4,7 +4,6 @@ const prisma = new PrismaClient();
 const products = [
 
     {
-        code: "zz21cz3c1",
         name: "Blue Band",
         description: "Product Description",
         image: "blue-band.jpg",
@@ -15,7 +14,6 @@ const products = [
         rating: 3
     },
     {
-        code: "244wgerg2",
         name: "Blue T-Shirt",
         description: "Product Description",
         image: "blue-t-shirt.jpg",
@@ -26,7 +24,6 @@ const products = [
         rating: 5
     },
     {
-        code: "h456wer53",
         name: "Bracelet",
         description: "Product Description",
         image: "bracelet.jpg",
@@ -37,7 +34,6 @@ const products = [
         rating: 4
     },
     {
-        code: "av2231fwg",
         name: "Brown Purse",
         description: "Product Description",
         image: "brown-purse.jpg",
@@ -48,7 +44,6 @@ const products = [
         rating: 4
     },
     {
-        code: "bib36pfvm",
         name: "Chakra Bracelet",
         description: "Product Description",
         image: "chakra-bracelet.jpg",
@@ -59,7 +54,6 @@ const products = [
         rating: 3
     },
     {
-        code: "mbvjkgip5",
         name: "Galaxy Earrings",
         description: "Product Description",
         image: "galaxy-earrings.jpg",
@@ -70,7 +64,6 @@ const products = [
         rating: 5
     },
     {
-        code: "vbb124btr",
         name: "Game Controller",
         description: "Product Description",
         image: "game-controller.jpg",
@@ -81,7 +74,6 @@ const products = [
         rating: 4
     },
     {
-        code: "cm230f032",
         name: "Gaming Set",
         description: "Product Description",
         image: "gaming-set.jpg",
@@ -92,7 +84,6 @@ const products = [
         rating: 3
     },
     {
-        code: "plb34234v",
         name: "Gold Phone Case",
         description: "Product Description",
         image: "gold-phone-case.jpg",
@@ -103,7 +94,6 @@ const products = [
         rating: 4
     },
     {
-        code: "4920nnc2d",
         name: "Green Earbuds",
         description: "Product Description",
         image: "green-earbuds.jpg",
@@ -114,7 +104,6 @@ const products = [
         rating: 4
     },
     {
-        code: "250vm23cc",
         name: "Green T-Shirt",
         description: "Product Description",
         image: "green-t-shirt.jpg",
@@ -125,7 +114,6 @@ const products = [
         rating: 5
     },
     {
-        code: "fldsmn31b",
         name: "Grey T-Shirt",
         description: "Product Description",
         image: "grey-t-shirt.jpg",
@@ -136,7 +124,6 @@ const products = [
         rating: 3
     },
     {
-        code: "waas1x2as",
         name: "Headphones",
         description: "Product Description",
         image: "headphones.jpg",
@@ -147,7 +134,6 @@ const products = [
         rating: 5
     },
     {
-        code: "vb34btbg5",
         name: "Light Green T-Shirt",
         description: "Product Description",
         image: "light-green-t-shirt.jpg",
@@ -158,7 +144,6 @@ const products = [
         rating: 4
     },
     {
-        code: "k8l6j58jl",
         name: "Lime Band",
         description: "Product Description",
         image: "lime-band.jpg",
@@ -169,7 +154,6 @@ const products = [
         rating: 3
     },
     {
-        code: "v435nn85n",
         name: "Mini Speakers",
         description: "Product Description",
         image: "mini-speakers.jpg",
@@ -180,7 +164,6 @@ const products = [
         rating: 4
     },
     {
-        code: "09zx9c0zc",
         name: "Painted Phone Case",
         description: "Product Description",
         image: "painted-phone-case.jpg",
@@ -191,7 +174,6 @@ const products = [
         rating: 5
     },
     {
-        code: "mnb5mb2m5",
         name: "Pink Band",
         description: "Product Description",
         image: "pink-band.jpg",
@@ -202,7 +184,6 @@ const products = [
         rating: 4
     },
     {
-        code: "r23fwf2w3",
         name: "Pink Purse",
         description: "Product Description",
         image: "pink-purse.jpg",
@@ -213,7 +194,6 @@ const products = [
         rating: 4
     },
     {
-        code: "pxpzczo23",
         name: "Purple Band",
         description: "Product Description",
         image: "purple-band.jpg",
@@ -224,7 +204,6 @@ const products = [
         rating: 3
     },
     {
-        code: "2c42cb5cb",
         name: "Purple Gemstone Necklace",
         description: "Product Description",
         image: "purple-gemstone-necklace.jpg",
@@ -235,7 +214,6 @@ const products = [
         rating: 4
     },
     {
-        code: "5k43kkk23",
         name: "Purple T-Shirt",
         description: "Product Description",
         image: "purple-t-shirt.jpg",
@@ -246,7 +224,6 @@ const products = [
         rating: 5
     },
     {
-        code: "lm2tny2k4",
         name: "Shoes",
         description: "Product Description",
         image: "shoes.jpg",
@@ -257,7 +234,6 @@ const products = [
         rating: 4
     },
     {
-        code: "nbm5mv45n",
         name: "Sneakers",
         description: "Product Description",
         image: "sneakers.jpg",
@@ -268,7 +244,6 @@ const products = [
         rating: 4
     },
     {
-        code: "zx23zc42c",
         name: "Teal T-Shirt",
         description: "Product Description",
         image: "teal-t-shirt.jpg",
@@ -279,7 +254,6 @@ const products = [
         rating: 3
     },
     {
-        code: "acvx872gc",
         name: "Yellow Earbuds",
         description: "Product Description",
         image: "yellow-earbuds.jpg",
@@ -290,7 +264,6 @@ const products = [
         rating: 3
     },
     {
-        code: "tx125ck42",
         name: "Yoga Mat",
         description: "Product Description",
         image: "yoga-mat.jpg",

@@ -17,16 +17,16 @@ export default async function handler(req, res) {
       const products = await prisma.product.findMany();
       res.status(200).json(products);
     } catch (error) {
-      res.status(500).json({ error: 'Error fetching products' });
+      console.log(error)
+      res.status(500).json({ error: String(error) });
     }
   }
   // Handle POST request
   else if (req.method === 'POST') {
     try {
-      const { code, name, description, image, price, category, quantity, inventoryStatus, rating } = req.body;
+      const { name, description, image, price, category, quantity, inventoryStatus, rating } = req.body;
       const newProduct = await prisma.product.create({
         data: {
-          code,
           name,
           description,
           image,
@@ -39,11 +39,11 @@ export default async function handler(req, res) {
       });
       res.status(201).json(newProduct);
     } catch (error) {
-      res.status(500).json({ error: 'Error creating product' });
+      res.status(500).json({ error: String(error)});
     }
   }
   // Handle other request methods
   else {
-    res.status(405).json({ message: 'Method not allowed' });
+    res.status(405).json({ message: error });
   }
 }

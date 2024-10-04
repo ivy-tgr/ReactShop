@@ -8,11 +8,10 @@ export default async function handler(req, res) {
 
   if (req.method === 'PUT') {
     try {
-      const { code, name, description, image, price, category, quantity, inventoryStatus, rating } = req.body;
+      const { name, description, image, price, category, quantity, inventoryStatus, rating } = req.body;
       const updatedProduct = await prisma.product.update({
         where: { id: parseInt(id) },
         data: {
-          code,
           name,
           description,
           image,
