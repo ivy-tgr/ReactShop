@@ -17,7 +17,7 @@ export default async function handler(req, res) {
         res.status(404).json({ message: 'Product not found' });
       }
     } catch (error) {
-      res.status(500).json({ error: 'Error fetching product' });
+      res.status(500).json({ error: error });
     }
   } else {
     res.status(405).json({ message: 'Method not allowed' });
