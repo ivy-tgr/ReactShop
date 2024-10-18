@@ -16,7 +16,7 @@ export default function PaginationDemo() {
     const [layout, setLayout] = useState('grid');
     const [sortKey, setSortKey] = useState(null);
     const [sortOrder, setSortOrder] = useState(null);
-    const [rows, setRows] = useState(5);
+    const [rows, setRows] = useState(6);
     const [globalFilter, setGlobalFilter] = useState('');
     const toast = useRef(null);
 
@@ -164,14 +164,15 @@ export default function PaginationDemo() {
             <Navbar />
             <Toast ref={toast} />
             <DataView
-                value={sortProducts(products.filter((product) => product.name.toLowerCase().includes(globalFilter.toLowerCase())))} // Filter nach globalFilter
+                value={sortProducts(products.filter((product) => product.name.toLowerCase().includes(globalFilter.toLowerCase())))}
                 listTemplate={listTemplate}
                 layout={layout}
                 header={header()}
                 paginator
+                rowsPerPageOptions={[6, 12, 24]}
+                paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
+                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
                 rows={rows}
-                rowsPerPageOptions={[5, 10, 20]}
-                onPage={(e) => setRows(e.rows)}
             />
         </div>
     );
