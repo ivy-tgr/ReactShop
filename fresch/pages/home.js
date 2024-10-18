@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import HomeProducts from '@/components/HomeProductCarussell';
 import Image from 'next/image';
 import { Rating } from 'primereact/rating';
+import Footer from '@/components/Footer';
 
 export default function TemplateDemo() {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -67,6 +68,7 @@ export default function TemplateDemo() {
                     </TabPanel>
                 ))}
             </TabView>
+            <Footer/>
         </div>
     );
 }

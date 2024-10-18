@@ -10,6 +10,7 @@ import { getProducts } from '../services/ProductService';
 import Navbar from '../components/Navbar';
 import {Image } from 'primereact/image';
 import { Toast } from 'primereact/toast';
+import Footer from '@/components/Footer';
 
 export default function PaginationDemo() {
     const [products, setProducts] = useState([]);
@@ -174,6 +175,7 @@ export default function PaginationDemo() {
                 currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
                 rows={rows}
             />
+            <Footer/>
         </div>
     );
 }
