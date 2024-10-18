@@ -7,6 +7,7 @@ import { getProducts, createProduct, updateProduct, deleteProduct as deleteProdu
 import { createId } from '../utils/utils';
 import { Toast } from 'primereact/toast';
 import Navbar from '../components/Navbar';
+import Footer from '@/components/Footer';
 
 export default function Home() {
     let emptyProduct = {
@@ -182,6 +183,7 @@ export default function Home() {
                     hideDeleteProductsDialog={() => setDeleteProductsDialog(false)}
                     deleteSelectedProducts={deleteSelectedProducts}
                 />
+                <Footer/>
             </div>
         </div>
     );
