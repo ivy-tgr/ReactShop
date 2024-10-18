@@ -51,7 +51,6 @@ export const ProductTable = ({
             <div className="mt-3 md:mt-0 flex justify-content-end">
                 <Button icon="pi pi-plus" className="mr-2 p-button-rounded" onClick={openNew} />
                 <Button icon="pi pi-trash" className="p-button-danger mr-2 p-button-rounded" onClick={confirmDeleteSelected} disabled={!selectedProducts || !selectedProducts.length} />
-                <Button icon="pi pi-upload" className="p-button-help p-button-rounded" onClick={exportCSV} />
             </div>
         </div>
     );

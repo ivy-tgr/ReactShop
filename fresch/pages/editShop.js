@@ -126,10 +126,6 @@ export default function Home() {
         return products.findIndex(p => p.id === id);
     };
 
-    const exportCSV = () => {
-        // Funktion zur CSV-Export-Logik
-    };
-
     const onInputChange = (e, name) => {
         const val = (e.target && e.target.value) || '';
         let _product = { ...product };
@@ -160,7 +156,6 @@ export default function Home() {
                     setGlobalFilter={setGlobalFilter}
                     openNew={openNew}
                     confirmDeleteSelected={confirmDeleteSelected}
-                    exportCSV={exportCSV}
                     editProduct={editProduct}
                     confirmDeleteProduct={confirmDeleteProduct}
                 />
