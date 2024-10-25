@@ -13,7 +13,7 @@ export default function TemplateDemo() {
     const itemRenderer = (item, itemIndex) => (
         <a className="p-menuitem-link flex flex-column align-items-start gap-2"  onClick={() => setActiveIndex(itemIndex)}>
             <div className="flex align-items-center gap-2">
-                <img alt={item.name} src={`https://primefaces.org/cdn/primereact/images/avatar/${item.image}`} style={{ width: '32px' }} />
+                <Image width={100} height={30} alt={item.name} src={`https://primefaces.org/cdn/primereact/images/avatar/${item.image}`} style={{ width: '32px' }} />
                 <span className="font-bold">{item.name}</span>
             </div>
             <span className="text-sm text-gray-500">{item.description}</span>
