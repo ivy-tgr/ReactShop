@@ -5,10 +5,9 @@ html {
 body {
     margin: 0px;
     height: 100%;
-    padding: 2rem;
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: var(--surface-ground);
+    background-color: white;
     font-family: var(--font-family);
     font-weight: normal;
     color: var(--text-color);
@@ -18,4 +17,35 @@ body {
 
 .p-tabview-nav {
     border: none;
+}
+
+  .p-menubar {
+    background-color: white;
+    border: 0px;
+    border-radius: 0px;
+    justify-content: center;
+}
+
+.p-menubar .p-menubar-root-list {
+    outline: 0 none;
+    margin: auto;
+    padding-right: 8em;
+}
+
+.p-menubar .p-menubar-end {
+    margin-left: 0;
+    align-self: center;
+    padding-right: 2em;
+  }
+
+.p-avatar img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.p-dataview .p-dataview-header {
+    background-color: white;
+    border: 0;
+    border-width: 0;
+    padding: 1em 1em 0;
 }

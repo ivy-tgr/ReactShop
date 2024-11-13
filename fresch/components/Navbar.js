@@ -3,6 +3,7 @@ import { Menubar } from 'primereact/menubar';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 import Image from 'next/image';
+import { Avatar } from 'primereact/avatar';
 
 export default function Navbar() {
     const items = [
@@ -64,9 +65,16 @@ export default function Navbar() {
 
     const start = <Image width="150" height="80" alt="logo" src={`/demo/images/startPage/fresch.png`} className="mr-2"></Image>;
 
-    return (
-        <div className="card">
-            <Menubar model={items} start={start} />
+    const end = (
+        <div className="flex align-items-center gap-5">
+            <Avatar image="https://primefaces.org/cdn/primereact/images/avatar/amyelsner.png" shape="circle" />
         </div>
     );
+
+    return (
+        <div className="navbar">
+            <Menubar model={items} start={start} end={end}/>
+        </div>
+    );
+    
 }
