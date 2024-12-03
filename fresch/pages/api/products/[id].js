@@ -1,4 +1,3 @@
-// GET ein Produkt nach ID
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
