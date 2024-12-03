@@ -12,7 +12,7 @@ import {Image } from 'primereact/image';
 import { Toast } from 'primereact/toast';
 import Footer from '@/components/Footer';
 
-export default function PaginationDemo() {
+export default function ProductPagination() {
     const [products, setProducts] = useState([]);
     const [layout, setLayout] = useState('grid');
     const [sortKey, setSortKey] = useState(null);
@@ -45,7 +45,7 @@ export default function PaginationDemo() {
         return (
             <div className="col-12" key={product.id}>
                 <div className={classNames('flex flex-column xl:flex-row xl:align-items-start p-4 gap-4', { 'border-top-1 surface-border': index !== 0 })}>
-                    <Image src={`/demo/images/product/${product.image}`} width="100" height="100" onError={(e) => e.target.src = 'https://www.mountainphotography.com/images/xl/20100923-Capitol-Sunset.jpg'} alt={product.image} preview/>
+                    <Image src={product.image} width="100" height="100" onError={(e) => e.target.src = 'https://www.mountainphotography.com/images/xl/20100923-Capitol-Sunset.jpg'} alt={product.image} preview/>
                     <div className="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
                         <div className="flex flex-column align-items-center sm:align-items-start gap-3">
                             <div className="text-2xl font-bold text-900">{product.name}</div>
@@ -80,7 +80,7 @@ export default function PaginationDemo() {
                         <Tag value={product.inventoryStatus} severity={getSeverity(product)}></Tag>
                     </div>
                     <div className="flex flex-column align-items-center gap-3 py-5">
-                        <Image src={`/demo/images/product/${product.image}`} width="150" height="150" onError={(e) => e.target.src = 'https://www.mountainphotography.com/images/xl/20100923-Capitol-Sunset.jpg'} alt={product.image} preview/>
+                        <Image src={product.image} width="150" height="150" onError={(e) => e.target.src = 'https://www.mountainphotography.com/images/xl/20100923-Capitol-Sunset.jpg'} alt={product.image} preview/>
                         <div className="text-2xl font-bold">{product.name}</div>
                         <Rating value={product.rating} readOnly cancel={false}></Rating>
                     </div>

@@ -15,14 +15,13 @@ export const ProductTable = ({
     setGlobalFilter, 
     openNew, 
     confirmDeleteSelected, 
-    exportCSV, 
     editProduct, 
     confirmDeleteProduct
 }) => {
     const dt = useRef(null);
 
     const imageBodyTemplate = (rowData) => (
-        <Image src={`demo/images/product/${rowData.image}`} width="100" height="100" onError={(e) => e.target.src = 'https://www.mountainphotography.com/images/xl/20100923-Capitol-Sunset.jpg'} alt={rowData.image} />
+        <Image src={rowData.image} width="100" height="100" onError={(e) => e.target.src = 'https://www.mountainphotography.com/images/xl/20100923-Capitol-Sunset.jpg'} alt={rowData.image} />
     );
 
     const priceBodyTemplate = (rowData) => formatCurrency(rowData.price);
@@ -70,7 +69,6 @@ export const ProductTable = ({
                 <Column field="category" header="Category" sortable style={{ minWidth: '10rem' }}></Column>
                 <Column field="rating" header="Reviews" body={ratingBodyTemplate} sortable style={{ minWidth: '12rem' }}></Column>
                 <Column field="inventoryStatus" header="Status" body={statusBodyTemplate} sortable style={{ minWidth: '12rem' }}></Column>
-                <Column body={actionBodyTemplate} exportable={false} style={{ minWidth: '8rem' }}></Column>
             </DataTable>
         </>
     );

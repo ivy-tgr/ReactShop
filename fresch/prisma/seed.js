@@ -6,7 +6,7 @@ const products = [
     {
         name: "Blue Band",
         description: "Product Description",
-        image: "blue-band.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 79,
         category: "Fitness",
         quantity: 2,
@@ -16,7 +16,7 @@ const products = [
     {
         name: "Blue T-Shirt",
         description: "Product Description",
-        image: "blue-t-shirt.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 29,
         category: "Clothing",
         quantity: 25,
@@ -26,7 +26,7 @@ const products = [
     {
         name: "Bracelet",
         description: "Product Description",
-        image: "bracelet.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 15,
         category: "Accessories",
         quantity: 73,
@@ -36,7 +36,7 @@ const products = [
     {
         name: "Brown Purse",
         description: "Product Description",
-        image: "brown-purse.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 120,
         category: "Accessories",
         quantity: 0,
@@ -46,7 +46,7 @@ const products = [
     {
         name: "Chakra Bracelet",
         description: "Product Description",
-        image: "chakra-bracelet.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 32,
         category: "Accessories",
         quantity: 5,
@@ -56,7 +56,7 @@ const products = [
     {
         name: "Galaxy Earrings",
         description: "Product Description",
-        image: "galaxy-earrings.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 34,
         category: "Accessories",
         quantity: 23,
@@ -66,7 +66,7 @@ const products = [
     {
         name: "Game Controller",
         description: "Product Description",
-        image: "game-controller.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 99,
         category: "Electronics",
         quantity: 2,
@@ -76,7 +76,7 @@ const products = [
     {
         name: "Gaming Set",
         description: "Product Description",
-        image: "gaming-set.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 299,
         category: "Electronics",
         quantity: 63,
@@ -86,7 +86,7 @@ const products = [
     {
         name: "Gold Phone Case",
         description: "Product Description",
-        image: "gold-phone-case.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 24,
         category: "Accessories",
         quantity: 0,
@@ -96,7 +96,7 @@ const products = [
     {
         name: "Green Earbuds",
         description: "Product Description",
-        image: "green-earbuds.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 89,
         category: "Electronics",
         quantity: 23,
@@ -106,7 +106,7 @@ const products = [
     {
         name: "Green T-Shirt",
         description: "Product Description",
-        image: "green-t-shirt.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 49,
         category: "Clothing",
         quantity: 74,
@@ -116,7 +116,7 @@ const products = [
     {
         name: "Grey T-Shirt",
         description: "Product Description",
-        image: "grey-t-shirt.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 48,
         category: "Clothing",
         quantity: 0,
@@ -126,7 +126,7 @@ const products = [
     {
         name: "Headphones",
         description: "Product Description",
-        image: "headphones.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 175,
         category: "Electronics",
         quantity: 8,
@@ -136,7 +136,7 @@ const products = [
     {
         name: "Light Green T-Shirt",
         description: "Product Description",
-        image: "light-green-t-shirt.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 49,
         category: "Clothing",
         quantity: 34,
@@ -146,7 +146,7 @@ const products = [
     {
         name: "Lime Band",
         description: "Product Description",
-        image: "lime-band.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 79,
         category: "Fitness",
         quantity: 12,
@@ -156,7 +156,7 @@ const products = [
     {
         name: "Mini Speakers",
         description: "Product Description",
-        image: "mini-speakers.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 85,
         category: "Clothing",
         quantity: 42,
@@ -166,7 +166,7 @@ const products = [
     {
         name: "Painted Phone Case",
         description: "Product Description",
-        image: "painted-phone-case.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 56,
         category: "Accessories",
         quantity: 41,
@@ -176,7 +176,7 @@ const products = [
     {
         name: "Pink Band",
         description: "Product Description",
-        image: "pink-band.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 79,
         category: "Fitness",
         quantity: 63,
@@ -186,7 +186,7 @@ const products = [
     {
         name: "Pink Purse",
         description: "Product Description",
-        image: "pink-purse.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 110,
         category: "Accessories",
         quantity: 0,
@@ -196,7 +196,7 @@ const products = [
     {
         name: "Purple Band",
         description: "Product Description",
-        image: "purple-band.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 79,
         category: "Fitness",
         quantity: 6,
@@ -206,7 +206,7 @@ const products = [
     {
         name: "Purple Gemstone Necklace",
         description: "Product Description",
-        image: "purple-gemstone-necklace.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 45,
         category: "Accessories",
         quantity: 62,
@@ -216,7 +216,7 @@ const products = [
     {
         name: "Purple T-Shirt",
         description: "Product Description",
-        image: "purple-t-shirt.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 49,
         category: "Clothing",
         quantity: 2,
@@ -226,7 +226,7 @@ const products = [
     {
         name: "Shoes",
         description: "Product Description",
-        image: "shoes.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 64,
         category: "Clothing",
         quantity: 0,
@@ -236,7 +236,7 @@ const products = [
     {
         name: "Sneakers",
         description: "Product Description",
-        image: "sneakers.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 78,
         category: "Clothing",
         quantity: 52,
@@ -246,7 +246,7 @@ const products = [
     {
         name: "Teal T-Shirt",
         description: "Product Description",
-        image: "teal-t-shirt.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 49,
         category: "Clothing",
         quantity: 3,
@@ -256,7 +256,7 @@ const products = [
     {
         name: "Yellow Earbuds",
         description: "Product Description",
-        image: "yellow-earbuds.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 89,
         category: "Electronics",
         quantity: 35,
@@ -266,7 +266,7 @@ const products = [
     {
         name: "Yoga Mat",
         description: "Product Description",
-        image: "yoga-mat.jpg",
+        image: "https://dev.mos.cms.futurecdn.net/ARWms77gyVZ5u2MZkQqcKc.jpg",
         price: 20,
         category: "Fitness",
         quantity: 15,

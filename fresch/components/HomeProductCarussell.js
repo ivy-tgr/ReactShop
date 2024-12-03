@@ -57,7 +57,7 @@ export default function HomeProducts() {
         return (
             <div className="border-1 surface-border border-round m-2 text-center py-5 px-3">
                 <div className="mb-3">
-                    <Image src={`/demo/images/product/${product.image}`} width="100" height="100" onError={(e) => e.target.src = 'https://www.mountainphotography.com/images/xl/20100923-Capitol-Sunset.jpg'} alt={product.image} preview />
+                    <Image src={product.image} width="100" height="100" onError={(e) => e.target.src = 'https://www.mountainphotography.com/images/xl/20100923-Capitol-Sunset.jpg'} alt={product.image} preview />
                 </div>
                 <div>
                     <h4 className="mb-1">{product.name}</h4>
