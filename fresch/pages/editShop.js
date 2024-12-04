@@ -4,7 +4,6 @@ import { ProductDialog } from '../components/ProductDialog';
 import { ProductDeleteDialog } from '../components/ProductDeleteDialog';
 import { DeleteProductsDialog } from '../components/DeleteProductsDialog';
 import { getProducts, createProduct, updateProduct, deleteProduct as deleteProductApi } from '../services/ProductService';
-import { createId } from '../utils/utils';
 import { Toast } from 'primereact/toast';
 import Navbar from '../components/Navbar';
 import Footer from '@/components/Footer';
@@ -64,7 +63,6 @@ export default function Home() {
                     _products[index] = _product;
                     toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000 });
                 } else {
-                    _product.id = createId();
                     _product.image = 'product-placeholder.svg';
                     await createProduct(_product);
                     _products.push(_product);

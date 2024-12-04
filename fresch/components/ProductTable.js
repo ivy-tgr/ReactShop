@@ -69,6 +69,7 @@ export const ProductTable = ({
                 <Column field="category" header="Category" sortable style={{ minWidth: '10rem' }}></Column>
                 <Column field="rating" header="Reviews" body={ratingBodyTemplate} sortable style={{ minWidth: '12rem' }}></Column>
                 <Column field="inventoryStatus" header="Status" body={statusBodyTemplate} sortable style={{ minWidth: '12rem' }}></Column>
+                <Column body={actionBodyTemplate} exportable={false} style={{ minWidth: '8rem' }}></Column>
             </DataTable>
         </>
     );
