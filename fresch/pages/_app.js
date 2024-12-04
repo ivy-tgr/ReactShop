@@ -15,13 +15,6 @@ function MyApp({ Component, pageProps }) {
         <meta name="keywords" content="Next.js, React, SEO" />
         <meta name="author" content="Tobias" />
       </Head>
-      <Script
-        src="/newrelic.js"  // Skript aus dem public-Ordner laden
-        strategy="beforeInteractive" // Skript vor der Interaktivität laden
-         crossOrigin="anonymous" // Skript mit CORS laden
-         
-      />
-
     <Component {...pageProps} />;
     
     </>

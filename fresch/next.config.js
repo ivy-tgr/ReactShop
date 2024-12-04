@@ -13,6 +13,6 @@ module.exports = {
       ]
     },
     images: {
-      domains: ['primefaces.org'], 
+      domains: ['dev.mos.cms.futurecdn.net', 'primefaces.org'], 
     }
   };
