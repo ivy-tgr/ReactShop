@@ -41,6 +41,19 @@ build:
     paths:
       - build/
 
+
+test:
+  only:
+    - main
+  script:
+    - echo "Starting tests"
+    - npm install react-test-renderer
+    - npm run test
+    - npm install -g snyk
+    - snyk auth $SNYK_KEY
+    - snyk test --all-projects --org=cc8a88bd-97ad-43ee-8fb0-c28ff5acea3a
+
+
 deploy_preview:
   stage: pre-prod
   only:
