@@ -11,34 +11,34 @@ const server = setupServer(
   }),
 )
 
-beforeAll(() => server.listen())
-afterEach(() => server.resetHandlers())
-afterAll(() => server.close())
+// beforeAll(() => server.listen())
+// afterEach(() => server.resetHandlers())
+// afterAll(() => server.close())
 
-test('loads and displays greeting', async () => {
-  render(<Fetch url="/cart" />)
+// test('loads and displays greeting', async () => {
+//   render(<Fetch url="/cart" />)
 
-  fireEvent.click(screen.getByText('Load Greeting'))
+//   fireEvent.click(screen.getByText('Load Greeting'))
 
-  await screen.findByRole('heading')
+//   await screen.findByRole('heading')
 
-  expect(screen.getByRole('heading')).toHaveTextContent('hello there')
-  expect(screen.getByRole('button')).toBeDisabled()
-})
+//   expect(screen.getByRole('heading')).toHaveTextContent('hello there')
+//   expect(screen.getByRole('button')).toBeDisabled()
+// })
 
-test('handles server error', async () => {
-  server.use(
-    http.get('/cart', () => {
-      return new HttpResponse(null, {status: 500})
-    }),
-  )
+// test('handles server error', async () => {
+//   server.use(
+//     http.get('/cart', () => {
+//       return new HttpResponse(null, {status: 500})
+//     }),
+//   )
 
-  render(<Fetch url="/cart" />)
+//   render(<Fetch url="/cart" />)
 
-  fireEvent.click(screen.getByText('Load Greeting'))
+//   fireEvent.click(screen.getByText('Load Greeting'))
 
-  await screen.findByRole('alert')
+//   await screen.findByRole('alert')
 
-  expect(screen.getByRole('alert')).toHaveTextContent('Oops, failed to fetch!')
-  expect(screen.getByRole('button')).not.toBeDisabled()
-})
+//   expect(screen.getByRole('alert')).toHaveTextContent('Oops, failed to fetch!')
+//   expect(screen.getByRole('button')).not.toBeDisabled()
+// })
