@@ -1,4 +1,3 @@
-// pages/reviews.js
 import { useState, useEffect, useRef } from 'react';
 import { TabMenu } from 'primereact/tabmenu';
 import { TabView, TabPanel } from 'primereact/tabview';
