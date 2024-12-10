@@ -30,3 +30,13 @@ model Review {
   rating      Int
   picture     String
 }
+
+model Event {
+  id          Int      @id @default(autoincrement())
+  status      String
+  date        String
+  icon        String
+  color       String
+  image       String
+  description String
+}

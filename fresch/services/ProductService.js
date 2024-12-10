@@ -1,4 +1,4 @@
-// fetches products from the API
+// fetches products from the Database
 export async function getProducts() {
   const res = await fetch("/api/products");
   if (!res.ok) {
@@ -7,11 +7,20 @@ export async function getProducts() {
   return res.json();
 }
 
-// fetches reviews from the API
+// fetches reviews from the Database
 export async function getReviews() {
   const res = await fetch("/api/reviews");
   if (!res.ok) {
     throw new Error("Failed to fetch reviews");
+  }
+  return res.json();
+}
+
+// fetches events from the Database
+export async function getEvents() {
+  const res = await fetch("/api/events");
+  if (!res.ok) {
+    throw new Error("Failed to fetch events");
   }
   return res.json();
 }

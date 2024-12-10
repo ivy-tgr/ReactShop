@@ -14,8 +14,8 @@ export default async function handler(req, res) {
   // Bearbeite GET-Anfrage
   if (req.method === 'GET') {
     try {
-      const reviews = await prisma.review.findMany();
-      res.status(200).json(reviews);
+      const events = await prisma.event.findMany();
+      res.status(200).json(events);
     } catch (error) {
       console.log(error)
       res.status(500).json({ error: String(error) });
