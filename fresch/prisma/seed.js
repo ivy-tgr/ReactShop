@@ -275,10 +275,43 @@ const products = [
     }
 ];
 
+const reviews = [
+    {
+        name: 'Amy Elsner',
+        image: 'https://primefaces.org/cdn/primereact/images/product/light-green-t-shirt.jpg',
+        description: 'Allein erziehende Mutter von 35 Kinder',
+        review: 'Das Light Green T-Shirt hat das perfekte Frühlingsgefühl! Es bringt nicht nur Farbe in meinen Kleiderschrank, sondern auch in meine Laune. Vielleicht könnte es sogar als meine persönliche Gute-Laune-Maschine patentiert werden! Wenn es noch eine Extra-Tasche für Snacks hätte, wäre es perfekt!',
+        rating: 4,
+        picture: 'https://primefaces.org/cdn/primereact/images/avatar/amyelsner.png'
+    },
+    {
+        name: 'Anna Fali',
+        image: 'https://primefaces.org/cdn/primereact/images/product/galaxy-earrings.jpg',
+        description: 'PH Studentin im 4ten Semester',
+        review: 'Diese Galaxy Earrings sind so galaktisch schön, dass ich fast das Gefühl habe, sie könnten mir das nächste schwarze Loch anzeigen! Sie funkeln und strahlen wie die Sterne. Vielleicht könnte man sie auch in einer etwas kleineren Variante für den Alltag machen – für den Fall, dass ich beim Kaffeetrinken nicht gleich ins All abheben möchte!',
+        rating: 5,
+        picture : 'https://primefaces.org/cdn/primereact/images/avatar/annafali.png'
+    },
+    {
+        name: 'Asiya Javayant',
+        image: 'https://primefaces.org/cdn/primereact/images/product/bracelet.jpg',
+        description: 'Ceo einer Gurken einmach Firma',
+        review: 'Das Armband ist ein echter Hingucker! Es hat so viel Stil, dass es wahrscheinlich selbst eine Raumfahrtmission als Modetrend etablieren könnte. Vielleicht könntest du es mit einer kleinen, verspielten Botschaft oder einem Charm erweitern – das würde den intergalaktischen Look noch persönlicher machen!',
+        rating: 4,
+        picture : 'https://primefaces.org/cdn/primereact/images/avatar/asiyajavayant.png'
+    }
+];
+
+
 async function main() {
   for (const product of products) {
     await prisma.product.create({
       data: product,
+    });
+  }
+  for (const review of reviews) {
+    await prisma.review.create({
+      data: review,
     });
   }
 }

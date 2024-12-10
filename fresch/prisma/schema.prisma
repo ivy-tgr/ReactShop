@@ -20,3 +20,13 @@ model Product {
   inventoryStatus String
   rating          Int
 }
+
+model Review {
+  id          Int      @id @default(autoincrement())
+  name        String
+  image       String
+  description String
+  review      String
+  rating      Int
+  picture     String
+}
