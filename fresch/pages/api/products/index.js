@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     optionsSuccessStatus: 200, // Für ältere Browser, die 204 nicht unterstützen
   });
 
-  // Handle GET request
+  // Bearbeite GET-Anfrage
   if (req.method === 'GET') {
     try {
       const products = await prisma.product.findMany();
@@ -21,7 +21,7 @@ export default async function handler(req, res) {
       res.status(500).json({ error: String(error) });
     }
   }
-  // Handle POST request
+  // Bearbeite POST-Anfrage
   else if (req.method === 'POST') {
     try {
       const { name, description, image, price, category, quantity, inventoryStatus, rating } = req.body;
@@ -42,7 +42,6 @@ export default async function handler(req, res) {
       res.status(500).json({ error: String(error)});
     }
   }
-  // Handle other request methods
   else {
     res.status(405).json({ message: error });
   }
