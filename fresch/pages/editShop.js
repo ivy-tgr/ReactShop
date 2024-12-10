@@ -31,6 +31,7 @@ export default function Home() {
     const [globalFilter, setGlobalFilter] = useState(null);
     const toast = useRef(null);
 
+    // gets all the products
     useEffect(() => {
         getProducts().then(setProducts).catch(error => {
             console.error('Error fetching products:', error);

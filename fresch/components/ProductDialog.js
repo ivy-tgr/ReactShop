@@ -15,7 +15,6 @@ export const ProductDialog = ({
     onInputChange,
     onInputNumberChange,
     submitted,
-    emptyProduct
 }) => {
 
     const categories = [

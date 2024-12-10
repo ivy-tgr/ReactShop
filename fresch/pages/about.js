@@ -39,7 +39,7 @@ export default function About() {
     const customizedContent = (item) => {
         return (
             <Card title={item.status} subTitle={item.date}>
-                {item.image && <img src={item.image} alt={item.name} width={200} className="shadow-1" />}
+                {item.image && <Image src={item.image} alt={item.name} width={200} className="shadow-1" />}
                 <p>{item.description}</p>
                 <Button label="Mehr erfahren" className="p-button-text"></Button>
             </Card>
@@ -55,7 +55,7 @@ export default function About() {
             Seit der Gründung haben wir ständig nach Innovation und Wachstum gestrebt. Sehen Sie sich unsere wichtigsten Meilensteine an.
         </div>
     </div>;
-    
+
     return (
         <div className="card">
             <Navbar />

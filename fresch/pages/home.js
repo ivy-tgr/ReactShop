@@ -14,6 +14,7 @@ export default function ReviewsPage() {
     const [reviews, setReviews] = useState([]);
     const toast = useRef(null);
 
+    // gets all the reviews
     useEffect(() => {
         getReviews().then((data) => {
             const reviewsWithTemplate = data.map((item, index) => ({

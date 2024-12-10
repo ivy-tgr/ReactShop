@@ -17,10 +17,11 @@ export default function ProductPagination() {
     const [layout, setLayout] = useState('grid');
     const [sortKey, setSortKey] = useState(null);
     const [sortOrder, setSortOrder] = useState(null);
-    const [rows, setRows] = useState(6);
+    const [rows] = useState(6);
     const [globalFilter, setGlobalFilter] = useState('');
     const toast = useRef(null);
 
+    // gets all the products
     useEffect(() => {
         getProducts().then(setProducts).catch(error => {
             console.error('Error fetching products:', error);
