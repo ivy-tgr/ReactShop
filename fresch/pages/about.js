@@ -15,6 +15,7 @@ export default function About() {
     const [events, setEvents] = useState([]);
     const toast = useRef(null);
 
+    // gets all the events
     useEffect(() => {
         getEvents().then((data) => {
             const reviewsWithTemplate = data.map((item, index) => ({

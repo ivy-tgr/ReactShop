@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
         <title>Fresch</title>
         <meta name="description" content="Nice Webshop implemented with React" />
         <meta name="keywords" content="Next.js, React, SEO" />
-        <meta name="author" content="Tobias" />
+        <meta name="author" content="Tobias Gretler" />
       </Head>
     <Component {...pageProps} />;
     <Analytics />
