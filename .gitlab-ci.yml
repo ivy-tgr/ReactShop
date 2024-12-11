@@ -16,7 +16,7 @@
 # This specific template is located at:
 # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Getting-Started.gitlab-ci.yml
 
-stages:          # List of stages for jobs, and their order of execution
+stages: # List of stages for jobs, and their order of execution
   - build
   - test
   - pre-prod
@@ -25,7 +25,7 @@ stages:          # List of stages for jobs, and their order of execution
 default:
   image: node:20.3.1
   before_script:
-      - cd fresch/
+    - cd fresch/
 
 cache:
   paths:
@@ -41,10 +41,11 @@ build:
     paths:
       - build/
 
-
 test:
+  stage: test
   only:
-    - main, preprod
+    - main
+    - preprod
   script:
     - echo "Starting tests"
     - npm install react-test-renderer
