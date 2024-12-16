@@ -5,8 +5,8 @@ import { Button } from 'primereact/button';
 import 'primereact/resources/themes/saga-blue/theme.css'; 
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
