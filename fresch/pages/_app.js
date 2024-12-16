@@ -1,3 +1,4 @@
+import React from "react";
 import "../styles/globals.css";
 import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";

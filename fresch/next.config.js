@@ -14,5 +14,8 @@ module.exports = {
     },
     images: {
       domains: ['dev.mos.cms.futurecdn.net', 'primefaces.org'], 
-    }
+    },
+    experimental: {
+      forceSwcTransforms: true,
+    },
   };
