@@ -7,6 +7,7 @@ import { getProducts, createProduct, updateProduct, deleteProduct as deleteProdu
 import { Toast } from 'primereact/toast';
 import Navbar from '../components/Navbar';
 import Footer from '@/components/Footer';
+import { getSession } from 'next-auth/react'; // Import für Sitzungskontrolle
 
 export default function Home() {
     let emptyProduct = {
@@ -186,4 +187,21 @@ export default function Home() {
             </div>
         </div>
     );
+}
+
+// Authentifizierung hinzufügen
+export async function getServerSideProps(context) {
+    const session = await getSession(context);
+    if (!session) {
+        return {
+            redirect: {
+                destination: '/auth/login',
+                permanent: false,
+            },
+        };
+    }
+
+    return {
+        props: { session },
+    };
 }
