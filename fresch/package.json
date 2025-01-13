@@ -20,7 +20,7 @@
     "jsonwebtoken": "^9.0.2",
     "lru-cache": "^11.0.2",
     "newrelic": "^12.8.1",
-    "next": "^15.1.4",
+    "next": "^14.2.20",
     "next-auth": "^4.24.11",
     "nextjs-cors": "^2.2.0",
     "pg": "^8.13.0",
