@@ -95,9 +95,14 @@ export default function Navbar() {
           </button>
         </>
       ) : (
-        <Link href="/auth/login">
-          <button className="p-button p-component">Login</button>
-        </Link>
+        <>
+          <Link href="/auth/login">
+            <button className="p-button p-component">Login</button>
+          </Link>
+          <Link href="/auth/register">
+            <button className="p-button p-component">Register</button>
+          </Link>
+        </>
       )}
     </div>
   );
