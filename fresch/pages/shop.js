@@ -10,7 +10,7 @@ import { getProducts } from '../services/ProductService';
 import Navbar from '../components/Navbar';
 import {Image } from 'primereact/image';
 import { Toast } from 'primereact/toast';
-import Footer from '@/components/Footer';
+import Footer from '../components/Footer';
 
 export default function ProductPagination() {
     const [products, setProducts] = useState([]);
