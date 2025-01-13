@@ -43,9 +43,6 @@ build:
 
 test:
   stage: test
-  only:
-    - main
-    - preprod
   script:
     - echo "Starting tests"
     - npm install react-test-renderer
