@@ -1,70 +1,138 @@
-import request from "supertest";
-import app from "../../pages/_app"; // Passe den Pfad zu deiner App an
+import { PrismaClient } from '@prisma/client';
+import handlerIndex from '../../pages/api/products/index';
+import handlerId from '../../pages/api/products/[id]';
+import handlerDelete from '../../pages/api/products/[id]/delete';
+import handlerUpdate from '../../pages/api/products/[id]/update';
+import { createMocks } from 'node-mocks-http';
 
-describe("API Endpoints", () => {
-  describe("GET /api/items", () => {
-    it("should fetch all items", async () => {
-      const res = await request(app).get("/api/items");
-      expect(res.statusCode).toBe(200);
-      expect(res.body).toHaveProperty("items");
+jest.mock('@prisma/client', () => {
+  const mPrismaClient = {
+    event: {
+      findMany: jest.fn(),
+    },
+    product: {
+      findUnique: jest.fn(),
+      delete: jest.fn(),
+      update: jest.fn(),
+    },
+  };
+  return { PrismaClient: jest.fn(() => mPrismaClient) };
+});
+
+describe('API Handlers', () => {
+  let prisma;
+
+  beforeAll(() => {
+    prisma = new PrismaClient();
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
+  describe('ID Handler', () => {
+    it('should return product on GET', async () => {
+      const product = { id: 1, name: 'Product 1' };
+      prisma.product.findUnique.mockResolvedValue(product);
+
+      const { req, res } = createMocks({
+        method: 'GET',
+        query: { id: '1' },
+      });
+
+      await handlerId(req, res);
+
+      expect(res._getStatusCode()).toBe(200);
+      expect(JSON.parse(res._getData())).toEqual(product);
+    });
+
+    it('should return 404 if product not found', async () => {
+      prisma.product.findUnique.mockResolvedValue(null);
+
+      const { req, res } = createMocks({
+        method: 'GET',
+        query: { id: '1' },
+      });
+
+      await handlerId(req, res);
+
+      expect(res._getStatusCode()).toBe(404);
+      expect(JSON.parse(res._getData()).message).toBe('Product not found');
+    });
+
+    it('should handle errors', async () => {
+      prisma.product.findUnique.mockRejectedValue(new Error('Error'));
+
+      const { req, res } = createMocks({
+        method: 'GET',
+        query: { id: '1' },
+      });
+
+      await handlerId(req, res);
+
+      expect(res._getStatusCode()).toBe(500);
     });
   });
 
-  describe("GET /api/items/:id", () => {
-    it("should fetch a single item by id", async () => {
-      const res = await request(app).get("/api/items/1");
-      expect(res.statusCode).toBe(200);
-      expect(res.body).toHaveProperty("item");
+  describe('Delete Handler', () => {
+    it('should delete product on DELETE', async () => {
+      prisma.product.delete.mockResolvedValue({});
+
+      const { req, res } = createMocks({
+        method: 'DELETE',
+        query: { id: '1' },
+      });
+
+      await handlerDelete(req, res);
+
+      expect(res._getStatusCode()).toBe(204);
     });
 
-    it("should return 404 if the item is not found", async () => {
-      const res = await request(app).get("/api/items/999");
-      expect(res.statusCode).toBe(404);
-    });
-  });
+    it('should handle errors', async () => {
+      prisma.product.delete.mockRejectedValue(new Error('Error'));
 
-  describe("POST /api/items", () => {
-    it("should create a new item", async () => {
-      const newItem = {
-        name: "Test Item",
-        description: "Test Description",
-      };
-      const res = await request(app).post("/api/items").send(newItem);
-      expect(res.statusCode).toBe(201);
-      expect(res.body).toHaveProperty("item");
-    });
-  });
+      const { req, res } = createMocks({
+        method: 'DELETE',
+        query: { id: '1' },
+      });
 
-  describe("PUT /api/items/:id", () => {
-    it("should update an existing item", async () => {
-      const updatedItem = {
-        name: "Updated Item",
-        description: "Updated Description",
-      };
-      const res = await request(app).put("/api/items/1").send(updatedItem);
-      expect(res.statusCode).toBe(200);
-      expect(res.body).toHaveProperty("item");
-    });
+      await handlerDelete(req, res);
 
-    it("should return 404 if the item is not found", async () => {
-      const updatedItem = {
-        name: "Updated Item",
-        description: "Updated Description",
-      };
-      const res = await request(app).put("/api/items/999").send(updatedItem);
-      expect(res.statusCode).toBe(404);
+      expect(res._getStatusCode()).toBe(500);
+      expect(JSON.parse(res._getData()).error).toBe('Error deleting product');
     });
   });
 
-  describe("DELETE /api/items/:id", () => {
-    it("should delete an item", async () => {
-      const res = await request(app).delete("/api/items/1");
-      expect(res.statusCode).toBe(200);
+  describe('Update Handler', () => {
+    it('should update product on PUT', async () => {
+      const updatedProduct = { id: 1, name: 'Updated Product' };
+      prisma.product.update.mockResolvedValue(updatedProduct);
+
+      const { req, res } = createMocks({
+        method: 'PUT',
+        query: { id: '1' },
+        body: updatedProduct,
+      });
+
+      await handlerUpdate(req, res);
+
+      expect(res._getStatusCode()).toBe(200);
+      expect(JSON.parse(res._getData())).toEqual(updatedProduct);
     });
 
-    it("should return 404 if the item is not found", async () => {
-      const res = await request(app).delete("/api/items/999");
-      expect(res.statusCode).toBe(404);
+    it('should handle errors', async () => {
+      prisma.product.update.mockRejectedValue(new Error('Error'));
+
+      const { req, res } = createMocks({
+        method: 'PUT',
+        query: { id: '1' },
+        body: { name: 'Updated Product' },
+      });
+
+      await handlerUpdate(req, res);
+
+      expect(res._getStatusCode()).toBe(500);
+      expect(JSON.parse(res._getData()).error).toBe('Error updating product');
     });
   });
 });
