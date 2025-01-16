@@ -41,6 +41,30 @@ build:
     paths:
       - build/
 
+generate-and-upload-sbom:
+  stage: sbom
+  image: docker:20.10 # Use Docker to run Dependency-Track
+  services:
+    - name: docker:dind
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_TLS_CERTDIR: ""
+  script:
+    - echo "Starting Dependency-Track..."
+    - docker run -d -p 8080:8080 --name dependency-track dependencytrack/bundled
+    - echo "Waiting for Dependency-Track to initialize..."
+    - sleep 30 # Wait for Dependency-Track to fully start
+    - echo "Generating SBOM..."
+    - npx cyclonedx-bom --output-file sbom.json
+    - echo "Uploading SBOM to Dependency-Track..."
+    - "curl -X POST -H \"X-API-Key: $DTRACK_API_KEY\" -F \"bom=@sbom.json\" http://localhost:8080/api/v1/bom"
+    - "echo \"Stopping Dependency-Track...\""
+    - docker stop dependency-track
+    - docker rm dependency-track
+  only:
+    - main
+
+
 test:
   stage: test
   script:
