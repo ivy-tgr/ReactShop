@@ -191,7 +191,8 @@ export default function Home() {
 
 export async function getServerSideProps(context) {
     const session = await getSession(context);
-    console.log("Session:", session); // Debug-Log
+    console.log("Session:"); 
+    console.log("Session:", session);
     if (!session) {
         return {
             redirect: {
