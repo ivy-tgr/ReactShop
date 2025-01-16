@@ -189,9 +189,9 @@ export default function Home() {
     );
 }
 
-// Authentifizierung hinzufügen
 export async function getServerSideProps(context) {
     const session = await getSession(context);
+    console.log("Session:", session); // Debug-Log
     if (!session) {
         return {
             redirect: {
@@ -205,3 +205,4 @@ export async function getServerSideProps(context) {
         props: { session },
     };
 }
+
